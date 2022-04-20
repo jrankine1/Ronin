@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundObjects;
     private bool isGrounded;
     public float checkRadius;
+    public int playerHealth = 100;
 
     private void Awake()
     {
