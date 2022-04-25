@@ -17,6 +17,14 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     public float checkRadius;
     public int playerHealth = 100;
+    public GameObject weaponOne;
+    Animator anim;
+    public WeaponManager weaponManager;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void Awake()
     {
@@ -41,6 +49,14 @@ public class PlayerMovement : MonoBehaviour
         {
             FlipCharacter();
         }
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            Attack();
+
+        }
+
+        
     }
 
     private void FixedUpdate()
@@ -68,5 +84,23 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(new Vector2(0f, jumpForce));
         }
         isjumping = false;
+    }
+
+    void Attack()
+    {
+        //Debug.Log(weaponManager.weapon);
+        switch(weaponManager.weapon)
+        {
+            case Weapons.Blunt:
+                anim.SetTrigger("Attack 1");
+                break;
+            case Weapons.Fists:
+                anim.SetTrigger("Attack 2");
+                break;
+            case Weapons.Sword:
+                anim.SetTrigger("Attack 3");
+                break;
+        }
+        
     }
 }

@@ -17,17 +17,17 @@ public class WeaponManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             weapon = Weapons.Fists;
-            print("Fists");
+            //print("Fists");
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             weapon = Weapons.Blunt;
-            print("Blunt");
+            //print("Blunt");
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             weapon = Weapons.Sword;
-            print("Sword");
+            //print("Sword");
         }
     }
 
