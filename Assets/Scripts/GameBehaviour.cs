@@ -9,6 +9,12 @@ public class GameBehaviour : MonoBehaviour
 
 public class GameBehaviour<T> : GameBehaviour where T : GameBehaviour
 {
+    protected static PlayerMovement _PM { get { return PlayerMovement.INSTANCE; } }
+    protected static EnemyManager _EM { get { return EnemyManager.INSTANCE; } }
+    protected static GameManager _GM { get { return GameManager.INSTANCE; } }
+    protected static WeaponManager _WM { get { return WeaponManager.INSTANCE; } }
+    protected static Enemy _E { get { return Enemy.INSTANCE; } }
+
     private static T instance_;
     public static T INSTANCE
     {

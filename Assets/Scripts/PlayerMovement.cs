@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : GameBehaviour<PlayerMovement>
 {
     //Video Tutorial: https://www.youtube.com/watch?v=9HAZQROH2gM
 
@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public int playerHealth = 100;
     public GameObject weaponOne;
     Animator anim;
-    public WeaponManager weaponManager;
+    
 
     private void Start()
     {
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
     void Attack()
     {
         //Debug.Log(weaponManager.weapon);
-        switch(weaponManager.weapon)
+        switch(_WM.weapon)
         {
             case Weapons.Blunt:
                 anim.SetTrigger("Attack 1");
