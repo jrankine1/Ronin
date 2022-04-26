@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : GameBehaviour<PlayerMovement>
+public class PlayerMovement : MonoBehaviour
 {
     //Video Tutorial: https://www.youtube.com/watch?v=9HAZQROH2gM
 
@@ -18,6 +18,7 @@ public class PlayerMovement : GameBehaviour<PlayerMovement>
     public float checkRadius;
     public int playerHealth = 100;
     public GameObject weaponOne;
+    public WeaponManager weaponManager;
     Animator anim;
     
 
@@ -89,7 +90,7 @@ public class PlayerMovement : GameBehaviour<PlayerMovement>
     void Attack()
     {
         //Debug.Log(weaponManager.weapon);
-        switch(_WM.weapon)
+        switch(weaponManager.weapon)
         {
             case Weapons.Blunt:
                 anim.SetTrigger("Attack 1");

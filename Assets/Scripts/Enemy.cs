@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : GameBehaviour<Enemy>
+public class Enemy : MonoBehaviour
 {
     public float enemyHealth = 100;
     // Start is called before the first frame update

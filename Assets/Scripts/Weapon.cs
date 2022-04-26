@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : GameBehaviour<Weapon>
+public class Weapon : MonoBehaviour
 {
     
     // Start is called before the first frame update
@@ -21,7 +21,7 @@ public class Weapon : GameBehaviour<Weapon>
     {
         if(CompareTag("Enemy"))
         {
-            _WM.Hit();
+            
         }
         Debug.Log(collision.gameObject.name);
     }

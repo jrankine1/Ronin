@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : GameBehaviour<GameManager>
+public class GameManager : MonoBehaviour
 {
     public float damage = 20;
     // Start is called before the first frame update
