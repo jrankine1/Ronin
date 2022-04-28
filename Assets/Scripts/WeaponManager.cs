@@ -7,11 +7,13 @@ public enum Weapons { Sword, Blunt, Fists }
 public class WeaponManager : MonoBehaviour
 {
     public Weapons weapon;
-    float DamageMultiplier = 1;
+    
+    
+
     void Start()
     {
         weapon = Weapons.Fists;
-        WeaponDamage();
+        
     }
     void Update()
     {
@@ -32,27 +34,9 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    internal void Hit()
-    {
-        throw new NotImplementedException();
-    }
+    
 
-    void WeaponDamage()
-    {
-        switch(weapon)
-        {
-            case Weapons.Fists:
-                DamageMultiplier = 1f;
-                break;
-            case Weapons.Blunt:
-                DamageMultiplier = 2f;
-                break;
-            case Weapons.Sword:
-                DamageMultiplier = 0.5f;
-                break;
-
-        }
-    }
+    
 
    
 

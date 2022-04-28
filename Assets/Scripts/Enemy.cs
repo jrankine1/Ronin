@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float enemyHealth = 100;
+    public int enemyHealth = 100;
+    int currentHealth;
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHealth = enemyHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int damage)
     {
-        
+        currentHealth -= damage;
+        if(currentHealth <= 0)
+        {
+            Die();
+        }
     }
 
     void Die()
     {
-        if (enemyHealth <= 0f)
-        {
-            Destroy(gameObject);
-        }
+        Destroy(this.gameObject);
     }
-    
 }

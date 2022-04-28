@@ -92,10 +92,10 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log(weaponManager.weapon);
         switch(weaponManager.weapon)
         {
-            case Weapons.Blunt:
+            case Weapons.Fists:
                 anim.SetTrigger("Attack 1");
                 break;
-            case Weapons.Fists:
+            case Weapons.Blunt:
                 anim.SetTrigger("Attack 2");
                 break;
             case Weapons.Sword:

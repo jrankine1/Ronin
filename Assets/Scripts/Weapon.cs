@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +17,5 @@ public class Weapon : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(CompareTag("Enemy"))
-        {
-            
-        }
-        Debug.Log(collision.gameObject.name);
-    }
+    
 }
