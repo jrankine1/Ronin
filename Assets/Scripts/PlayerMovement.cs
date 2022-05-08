@@ -17,8 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     public float checkRadius;
     public int playerHealth = 100;
-    public GameObject weaponOne;
-    public WeaponManager weaponManager;
+    
+    public PlayerCombat playerCombat;
     Animator anim;
     
 
@@ -68,8 +68,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void FlipCharacter()
     {
-        facingRight = !facingRight;
-        transform.Rotate(0f, 180f, 0f);
+        if(CompareTag("Player"))
+        {
+            facingRight = !facingRight;
+            transform.Rotate(0f, 180f, 0f);
+        }
+        
+
     }
 
     void Jump()
@@ -90,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
     void Attack()
     {
         //Debug.Log(weaponManager.weapon);
-        switch(weaponManager.weapon)
+        switch(playerCombat.weapon)
         {
             case Weapons.Fists:
                 anim.SetTrigger("Attack 1");
@@ -103,5 +108,18 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
         
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (groundCheck == null)
+            return;
+
+        Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
+    }
+
+    public bool FacingRight()
+    {
+        return facingRight;
     }
 }
