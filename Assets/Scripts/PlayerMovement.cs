@@ -40,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
 
+
+
         
 
         if(moveDirection > 0 && !facingRight)
@@ -55,6 +57,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Attack();
 
+        }
+
+        if(Input.GetKeyDown(KeyCode.D) && Input.GetKeyDown(KeyCode.S))
+        {
+            anim.SetTrigger("Running");
         }
 
         
